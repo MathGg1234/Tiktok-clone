@@ -13,6 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const registerContent = document.getElementById('Register');
     const videoContainer = document.getElementById('video-container');
 
+    // Fonction pour vérifier si l'utilisateur est connecté
+    function checkLoginStatus() {
+        const token = localStorage.getItem('token');
+        if (token) {
+            loginRegisterLink.style.display = 'none';
+            uploadLink.style.display = 'inline';
+        }
+    }
+
+    // Appeler la fonction de vérification au chargement de la page
+    checkLoginStatus();
+
     // Afficher la modale de connexion/inscription
     loginRegisterLink.addEventListener('click', () => {
         authModal.style.display = 'block';

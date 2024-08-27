@@ -1,3 +1,4 @@
+// routes/videos.js
 const express = require('express');
 const multer = require('multer');
 const Video = require('../models/Video');
@@ -5,6 +6,20 @@ const authMiddleware = require('../middleware/auth');
 
 const router = express.Router();
 
+// Route pour récupérer toutes les vidéos
+router.get('/', async (req, res) => {
+    try {
+        const videos = await Video.findAll({
+            include: { model: require('../models/User'), as: 'user' }
+        });
+        res.json(videos);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+
+// Ajout de la route pour téléverser des vidéos (si ce n'est pas déjà fait)
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'uploads/');

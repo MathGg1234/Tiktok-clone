@@ -1,6 +1,6 @@
-// index.js
 const express = require('express');
 const sequelize = require('./config/database');
+const { User, Video } = require('./models');  // Importe les modèles avec les associations
 const authRoutes = require('./routes/auth');
 const videoRoutes = require('./routes/videos');
 const path = require('path');
@@ -14,7 +14,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/auth', authRoutes);
 app.use('/api/videos', videoRoutes);
 
-// Servir la page d'accueil
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });

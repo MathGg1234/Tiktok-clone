@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Clone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">TikTok Clone</div>
+        <nav>
+            <a href="#" id="login-register-link">Login/Register</a>
+            <a href="#" id="upload-link" style="display:none;">Upload</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="video-container">
+            <!-- Les vidéos seront chargées ici -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TikTok Clone</p>
+    </footer>
+
+    <!-- Modale de connexion/inscription -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="tab">
+                <button class="tablinks" id="login-tab">Login</button>
+                <button class="tablinks" id="register-tab">Register</button>
+            </div>
+            <div id="Login" class="tabcontent">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <input type="email" id="login-email" placeholder="Email" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+            <div id="Register" class="tabcontent">
+                <h2>Register</h2>
+                <form id="register-form">
+                    <input type="text" id="register-username" placeholder="Username" required>
+                    <input type="email" id="register-email" placeholder="Email" required>
+                    <input type="password" id="register-password" placeholder="Password" required>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale de téléversement -->
+    <div id="upload-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Upload Video</h2>
+            <form id="upload-form" enctype="multipart/form-data">
+                <input type="file" id="video-file" accept="video/*" required>
+                <textarea id="video-description" placeholder="Description" rows="3"></textarea>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

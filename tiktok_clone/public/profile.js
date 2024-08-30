@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const token = localStorage.getItem('token');
 
         try {
-            // Requête sécurisée pour récupérer les données de l'utilisateur
-            const response = await fetch('http://localhost:3000/api/user/profile', {
+            // RequÃªte sÃ©curisÃ©e pour rÃ©cupÃ©rer les donnÃ©es de l'utilisateur
+            const response = await fetch('https://nutix.fun/api/user/profile', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`, // Utilisation du token pour sécuriser la requête
+                    'Authorization': `Bearer ${token}`, // Utilisation du token pour sÃ©curiser la requÃªte
                 },
             });
 
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayUserProfile(user) {
         document.getElementById('username').textContent = user.username;
         document.getElementById('followers-count').textContent = `${user.followers} followers`;
-        profilePhoto.src = user.profilePicture || '/images/default-profile.png'; // Utiliser une photo par défaut si aucune n'est définie
+        profilePhoto.src = user.profilePicture || '/images/default-profile.png'; // Utiliser une photo par dÃ©faut si aucune n'est dÃ©finie
         
         // Charger les publications de l'utilisateur
         const userPosts = document.getElementById('user-posts');
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Afficher le modal de paramètres
+    // Afficher le modal de paramÃ¨tres
     editProfileBtn.addEventListener('click', () => {
         settingsModal.style.display = 'block';
     });

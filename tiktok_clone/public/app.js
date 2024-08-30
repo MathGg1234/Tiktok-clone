@@ -5,22 +5,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const uploadForm = document.getElementById('upload-form');
     const videoContainer = document.getElementById('video-container');
 
-    // Fonction pour vérifier si l'utilisateur est connecté
+    // Fonction pour vÃ©rifier si l'utilisateur est connectÃ©
     function checkLoginStatus() {
         const token = localStorage.getItem('token');
         if (token) {
             uploadLink.style.display = 'inline'; // Affiche le lien d'upload
             document.getElementById('form-link').style.display = 'none'; // Masque le bouton "Formulaire"
-            document.getElementById('profile-icon').style.display = 'inline'; // Affiche l'icône de profil
+            document.getElementById('profile-icon').style.display = 'inline'; // Affiche l'icÃ´ne de profil
         } else {
             uploadLink.style.display = 'none'; // Masque le lien d'upload
             document.getElementById('form-link').style.display = 'inline'; // Affiche le bouton "Formulaire"
-            document.getElementById('profile-icon').style.display = 'none'; // Masque l'icône de profil
+            document.getElementById('profile-icon').style.display = 'none'; // Masque l'icÃ´ne de profil
         }
     }
     
 
-    // Appeler la fonction de vérification au chargement de la page
+    // Appeler la fonction de vÃ©rification au chargement de la page
     checkLoginStatus();
 
     // Afficher la modale d'upload
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const token = localStorage.getItem('token');
 
         try {
-            const response = await fetch('http://localhost:3000/api/videos', {
+            const response = await fetch('https://nutix.fun/api/videos', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (response.ok) {
                 alert('Video uploaded successfully');
                 uploadModal.style.display = 'none';
-                loadVideos(); // Recharger les vidéos après l'upload
+                loadVideos(); // Recharger les vidÃ©os aprÃ¨s l'upload
             } else {
                 alert('Video upload failed');
             }
@@ -78,13 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load videos
     async function loadVideos() {
         try {
-            const response = await fetch('http://localhost:3000/api/videos');
+            const response = await fetch('https://nutix.fun/api/videos');
             const videos = await response.json();
 
             videoContainer.innerHTML = ''; // Clear previous videos
             videos.forEach(video => {
                 const videoElement = document.createElement('video');
-                videoElement.src = `http://localhost:3000/${video.videoUrl}`;
+                videoElement.src = `https://nutix.fun/${video.videoUrl}`;
                 videoElement.controls = true;
                 videoContainer.appendChild(videoElement);
             });

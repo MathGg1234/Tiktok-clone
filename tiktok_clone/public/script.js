@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
-    // Gérer les boutons pour basculer entre connexion et inscription
+    // GÃ©rer les boutons pour basculer entre connexion et inscription
     loginButton.addEventListener('click', () => {
         container.classList.remove('right-panel-active'); // Basculer vers le mode connexion
     });
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         container.classList.add('right-panel-active'); // Basculer vers le mode inscription
     });
 
-    // Gérer la connexion
+    // GÃ©rer la connexion
     loginForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('login-password').value;
 
         try {
-            const response = await fetch('http://localhost:3000/api/auth/login', {
+            const response = await fetch('https://nutix.fun/api/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Gérer l'inscription avec connexion automatique
+    // GÃ©rer l'inscription avec connexion automatique
     registerForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('register-password').value;
 
         try {
-            const response = await fetch('http://localhost:3000/api/auth/register', {
+            const response = await fetch('https://nutix.fun/api/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (response.ok) {
                 const data = await response.json();
                 showNotification('Registration successful. You are now logged in.');
-                // Connexion automatique après inscription
+                // Connexion automatique aprÃ¨s inscription
                 localStorage.setItem('token', data.token);
                 window.location.href = 'index.html';
             } else {

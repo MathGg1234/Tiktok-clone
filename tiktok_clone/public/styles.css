@@ -167,3 +167,39 @@ footer {
     display: inline-block;
     margin-left: 15px;
 }
+
+
+
+/* Styles pour le bouton de connexion */
+#form-link {
+    background-color: #7DD856; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 20px; /* Espacement interne du bouton */
+    border: none; /* Supprimer les bordures */
+    border-radius: 8px; /* Bords arrondis */
+    text-decoration: none; /* Supprimer la décoration du lien */
+    font-weight: bold; /* Texte en gras */
+    display: inline-block; /* Pour le comportement des boutons */
+    cursor: pointer; /* Curseur en forme de main */
+    transition: background-color 0.3s ease; /* Transition pour l'effet au survol */
+}
+
+#form-link:hover {
+    background-color: #6AB849; /* Couleur légèrement plus foncée au survol */
+}
+
+/* Styles pour les boutons dans les modales */
+.modal button {
+    background-color: #7DD856; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 20px; /* Espacement interne du bouton */
+    border: none; /* Supprimer les bordures */
+    border-radius: 8px; /* Bords arrondis */
+    font-weight: bold; /* Texte en gras */
+    cursor: pointer; /* Curseur en forme de main */
+    transition: background-color 0.3s ease; /* Transition pour l'effet au survol */
+}
+
+.modal button:hover {
+    background-color: #6AB849; /* Couleur légèrement plus foncée au survol */
+}

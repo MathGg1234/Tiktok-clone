@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+    <title>Profil Utilisateur</title>
+</head>
+<body>
+    <header>
+        <h1>Mon Profil</h1>
+    </header>
+
+    <main>
+        <div class="profile-header">
+            <img src="/images/default-profile.png" alt="Profile Image" id="profile-photo" class="profile-photo">
+            <h2 id="username">Nom d'utilisateur</h2>
+            <p id="followers-count">0 followers</p>
+            <button id="edit-profile-btn">Modifier le profil</button>
+        </div>
+
+        <div class="publications">
+            <h3>Mes Publications</h3>
+            <div id="user-posts">
+                <!-- Les publications de l'utilisateur seront chargées ici -->
+            </div>
+        </div>
+    </main>
+
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Paramètres du Compte</h2>
+            <form id="settings-form">
+                <label for="profile-picture">Photo de Profil</label>
+                <input type="file" id="profile-picture" accept="image/*">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" id="new-username" placeholder="Nouveau nom d'utilisateur">
+                <label for="password">Mot de Passe</label>
+                <input type="password" id="new-password" placeholder="Nouveau mot de passe">
+                <button type="submit">Enregistrer les modifications</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>

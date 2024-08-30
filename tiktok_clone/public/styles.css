@@ -156,3 +156,14 @@ footer {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+
+
+
+
+
+.profile-icon {
+    display: inline-block;
+    margin-left: 15px;
+}

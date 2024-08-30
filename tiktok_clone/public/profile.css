@@ -1,0 +1,174 @@
+/* Styles généraux */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    width: 100%;
+    background-color: #512da8;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Profil */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #512da8;
+}
+
+.profile-header h2 {
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+#followers-count {
+    font-size: 14px;
+    color: #666;
+}
+
+#edit-profile-btn {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #512da8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#edit-profile-btn:hover {
+    background-color: #3e239c;
+}
+
+/* Publications */
+.publications {
+    width: 90%;
+    max-width: 800px;
+    margin-top: 30px;
+}
+
+.publications h3 {
+    text-align: center;
+    color: #333;
+}
+
+#user-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.post p {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+/* Modale de paramètres */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.modal-content input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background-color: #512da8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.modal-content button:hover {
+    background-color: #3e239c;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close:hover {
+    color: #333;
+}

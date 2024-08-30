@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } catch (error) {
             console.error('Error loading user profile:', error);
+            alert('Erreur lors du chargement du profil utilisateur.');
         }
     }
 
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         user.posts.forEach(post => {
             const postElement = document.createElement('div');
             postElement.className = 'post';
-            postElement.innerHTML = `<img src="${post.imageUrl}" alt="${post.title}"><p>${post.title}</p>`;
+            postElement.innerHTML = `<img src="${post.imageUrl}" alt="${post.description}"><p>${post.description}</p>`;
             userPosts.appendChild(postElement);
         });
     }

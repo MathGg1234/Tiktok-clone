@@ -2,6 +2,7 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const authMiddleware = require('../middleware/auth');
 const User = require('../models/User');
 
 const router = express.Router();
@@ -47,6 +48,19 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+
+router.post('/refresh', authMiddleware, async (req, res) => {
+  try {
+    const user = req.user;
+    const newToken = jwt.sign({ id: user.id }, 'your_secret_key', { expiresIn: '1h' }); // Génère un nouveau token
+    res.json({ token: newToken });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to refresh token' });
+  }
+});
+
+
 
 // Route par défaut pour /api/auth
 router.get('/', (req, res) => {

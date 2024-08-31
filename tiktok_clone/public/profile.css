@@ -1,9 +1,37 @@
-/* Styles généraux */
+/* Pour Chrome, Safari, et Opera */
+body::-webkit-scrollbar {
+    width: 8px; /* Taille minimale pour la scrollbar, ajustez si nécessaire */
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent; /* Piste de la scrollbar transparente */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0); /* Barre de défilement totalement transparente */
+    border-radius: 10px; /* Bordures arrondies pour invisibilité */
+    border: 3px solid transparent; /* Bord transparent pour mieux cacher */
+}
+
+/* Pour Firefox */
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f4f4f9;
+    scrollbar-width: thin; /* Réduit la largeur de la scrollbar */
+    scrollbar-color: transparent transparent; /* Cache complètement la couleur */
+}
+
+/* Pour IE et Edge */
+body {
+    -ms-overflow-style: none; /* Cache la scrollbar dans IE et Edge */
+}
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,13 +39,30 @@ body {
     min-height: 100vh;
 }
 
-/* Header */
 header {
-    width: 100%;
-    background-color: #512da8;
+    background-color: #333;
     color: #fff;
-    padding: 20px;
-    text-align: center;
+    padding: 10px 20px;
+    padding-right: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav a {
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+    
 }
 
 /* Profil */
@@ -75,7 +120,7 @@ header {
 #user-posts {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
+    gap: 120px;
     margin-top: 20px;
 }
 
@@ -96,6 +141,15 @@ header {
     border-radius: 8px;
     margin-bottom: 5px;
 }
+
+.post-video {
+    width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    object-fit: cover;
+}
+
 
 .post p {
     font-size: 14px;
@@ -171,4 +225,19 @@ header {
 
 .close:hover {
     color: #333;
+}
+
+
+#accueil {
+    background-color: #7DD856; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 20px; /* Espacement interne du bouton */
+    border: none; /* Supprimer les bordures */
+    border-radius: 8px; /* Bords arrondis */
+    text-decoration: none; /* Supprimer la décoration du lien */
+    font-weight: bold; /* Texte en gras */
+    display: inline-block; /* Pour le comportement des boutons */
+    cursor: pointer; /* Curseur en forme de main */
+    transition: background-color 0.3s ease; /* Transition pour l'effet au survol */
+    font-size: 14px;
 }
